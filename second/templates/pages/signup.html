@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- login page start -->
+  <style>
+    .form-signin{
+        border: 1px solid grey;
+        width: 30rem;
+        height: 100%; 
+        margin-left: 35rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+
+    }
+    .form-signin form{
+       margin: 10px;
+    }
+    h1{
+        margin-left: 6rem;
+    }
+  </style>
+    
+<main class="form-signin">
+  <form>
+  
+    <h1 class="h3 mb-3 fw-normal">Sign In</h1>
+
+    <div class="form-floating my-4">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">NAME:</label>
+    </div>
+
+    <div class="form-floating my-4">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">SUR-NAME:</label>
+      </div>
+
+      <div class="form-floating my-4">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">CONTACT-NO:</label>
+      </div>
+
+      <div class="form-floating my-4">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">EMAIL-ADDRESS:</label>
+      </div>
+
+    <div class="form-floating my-4">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">PASSWORD</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary my-4" type="submit">Sign In</button>
+    <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> -->
+    <p>Already Have Account ? 
+        <a href="/login">login</a>
+    </p>
+  </form>
+</main>
+
+
+    
+  </body>
+</html>
+
+<!-- login page end -->
+
+
+{% endblock %}

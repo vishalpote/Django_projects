@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% if error %}
+        <h1>Please Enter The value in The Box</h1><br><br>
+        {% endif %}
+        {% csrf_token %}
+            <!-- Enter subject1:  <input type="number" name="num1">
+            <br><br>
+            Enter subject2:  <input type="number" name="num2">
+            <br><br>
+            Enter subject3:  <input type="number" name="num3">
+            <br><br>
+            Enter subject4:  <input type="number" name="num4">
+            <br><br> -->
+
+            Enter subject5:  <input type="number" name="num5">
+            <br><br>
+            <button>check</button><br><br>
+            Total marks:  <input type="number" name="total" value={{total}}>
+            <br><br>
+            Percentage: <input type="text" value={{per}}>
+            <br><br>
+
+  
+    </form>
+</body>
+</html>

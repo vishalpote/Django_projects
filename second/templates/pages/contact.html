@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- this is the contact page -->
+<style>
+    .container1{
+        border: 1px solid grey;
+        width: 30rem;
+        height: 100%;
+        margin-left: 35rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .container1 form{
+    margin: 10px 10px 10px 10px;
+    }
+    table,th,td{
+      border: 1px solid black;
+    }
+</style> 
+
+<marquee behavior="" direction="" onmouseover="stop()" onmouseout="start()">
+  {% for n in secondappData %}
+  <a href="/details/{{n.id}}" style="text-decoration: none;"> {{n.title}} EveryOne   &nbsp; {{n.sec_desc |safe }}</a> &nbsp;
+  {% endfor %}
+</marquee>
+<div class="container1">
+<form>
+    <div class="mb-3 ">
+        <label for="exampleInputEmail1" class="form-label">NAME:</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+
+      <div class="mb-3 ">
+        <label for="exampleInputEmail1" class="form-label">SURNAME:</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+
+      <div class="mb-3 ">
+        <label for="exampleInputEmail1" class="form-label">PHONE-NO:</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+    <div class="mb-3 ">
+      <label for="exampleInputEmail1" class="form-label">EMAIL-ADDRESS:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">PASSWORD:</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<form action="" method="get">
+  <input type="text" name="searchfilter" id="">
+  <button>click</button>
+</form>
+
+{% for i in contactData %}
+<table border="5" style="border: 1px solid black;">
+  <tr style="border: 3px solid black;">
+    <th style="border: 3px solid black;" colspan="3">name</th>
+    <th style="border: 3px solid black;" colspan="3">surname</th>
+    <th style="border: 3px solid black;" colspan="3">phone</th>
+    <th style="border: 3px solid black;" colspan="3">email</th>
+    <th style="border: 3px solid black;" colspan="3">password</th>
+    <th style="border: 3px solid black;" colspan="3">Remove</th>
+  </tr>
+  <br><br>
+  <tr style="border: 3px solid black;">
+    <td style="border: 3px solid black;" colspan="3"><h5>{{i.name | slice:"0:" | safe}}</h5></td>
+    <td style="border: 3px solid black;" colspan="3">{{i.surname}}</td>
+    <td style="border: 3px solid black;" colspan="3">{{i.phone}}</td>
+    <td style="border: 3px solid black;" colspan="3">{{i.email}}</td>
+    <td style="border: 3px solid black;" colspan="3">{{i.password}}</td>
+    <td style="border: 3px solid black;" colspan="3"><button>Delete</button></td>
+  </tr>
+</table>
+
+{% empty %}
+
+<h1>No Data Match In This Result</h1>
+
+{% endfor %}
+<!-- end of contact page -->
+
+
+{% endblock %}
